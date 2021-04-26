@@ -3,9 +3,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-import { FileChooser } from '@ionic-native/file-chooser/ngx';
-import { File } from '@ionic-native/file/ngx';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -27,8 +24,7 @@ import { firebaseConfig } from './config/firebase.config';
     AngularFireAuthModule,
     AngularFireStorageModule
   ],
-  providers: [InAppBrowser,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },FileChooser,
-    File],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

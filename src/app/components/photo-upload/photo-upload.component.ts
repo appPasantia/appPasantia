@@ -19,6 +19,7 @@ export class PhotoUploadComponent implements OnInit {
       if(res){
         this.barStatus = false;
         this.fileUpload.unshift(res);
+        alert("Se mando tu curriculum, Exitos!")
       }
     },
     (error:any) => {
