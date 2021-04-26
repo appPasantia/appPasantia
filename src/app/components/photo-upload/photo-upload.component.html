@@ -1,0 +1,14 @@
+<div>
+  <form method="POST" enctype="multipart/form-data">
+    <div>
+      <div style="color: gray;">Por favor suba un archivo pdf o docx</div><br />
+      <input type="file" (change)="uploadFile($event)" accept=".pdf, .docx"/>
+    </div>
+  </form>
+</div>
+
+<div *ngIf = "barStatus">
+  <ion-spinner name="lines-small"></ion-spinner>
+</div>
+
+<app-photo-list [fileUpload] = "fileUpload"></app-photo-list>
