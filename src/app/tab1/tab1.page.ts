@@ -18,7 +18,7 @@ export class Tab1Page implements OnInit{
       logo:'https://logodownload.org/wp-content/uploads/2014/04/coca-cola-logo-1.png',
       nombre:'Pasantia de mercadeo',
       area:'Finanzas',
-      requisistos:'Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,Madison was named the capital of the Wisconsin Territory in 1836.',
+      requisistos:' Tener el primer año aprobado, exceptuando el CBC - ser alumno regular de grado de la Facultad de Ciencias Sociales, UBA - contar con una disponibilidad de 20 hs. por semana',
       visibilidad: false
     },
     {
@@ -26,13 +26,21 @@ export class Tab1Page implements OnInit{
       logo:'https://logodownload.org/wp-content/uploads/2014/04/coca-cola-logo-1.png',
       nombre:'Pasantia de mercadeo',
       area:'Finanzas',
-      requisistos:'Founded in 1829 on an isthmus between Lake Monona and Lake Mendota,Madison was named the capital of the Wisconsin Territory in 1836.',
+      requisistos:' Tener el primer año aprobado, exceptuando el CBC - ser alumno regular de grado de la Facultad de Ciencias Sociales, UBA - contar con una disponibilidad de 20 hs. por semana',
       visibilidad: false
     }
   ]
   constructor(private router: Router, private pasantiaServeice:PasantiaService ) {}
   ngOnInit(): void {
 
+  }
+  optenerPasantias(){
+    const data={
+sds:''
+    }
+    const path='/pasantias'
+    const id= '0004'
+    this.pasantiaServeice.getPasantias(data,path,id);
   }
 
   seeMore(pasantia){
