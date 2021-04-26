@@ -6,12 +6,45 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
+  <form [formGroup]="loginForm" >
+  <ion-list>
+  <ion-item>
+  <ion-label position="stacked">Nombre pansatía</ion-label>
+  <ion-input formControlName="userEmail" type="email" autocapitalize="off" autocomplete="off" autocorrect="off"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Empresa</ion-label>
+    <ion-input formControlName="userEmail" type="email" autocapitalize="off" autocomplete="off" autocorrect="off"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Requisitos</ion-label>
+      <ion-input formControlName="userEmail" type="email" autocapitalize="off" autocomplete="off" autocorrect="off"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Correo de contacto</ion-label>
+        <ion-input formControlName="userEmail" type="email" autocapitalize="off" autocomplete="off" autocorrect="off"></ion-input>
+        </ion-item>
+
+  <ion-item>
+  <ion-label position="stacked">Carrera</ion-label>
+  <ion-input formControlName="userPassword" type="password"></ion-input>
+  </ion-item>
+
+  <ion-toolbar>
+    <ion-title>
+      Subir imagen
+    </ion-title>
+  </ion-toolbar>
+
+
+  </ion-list>
+  <ion-button type="submit" color="light" expand="full">Entrar</ion-button>
+  </form>
+
 
   <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
