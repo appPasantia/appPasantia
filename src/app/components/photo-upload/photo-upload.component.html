@@ -2,7 +2,7 @@
   <form method="POST" enctype="multipart/form-data">
     <div>
       <div style="color: gray;">Por favor suba un archivo pdf o docx</div><br />
-      <input type="file" (change)="uploadFile($event)" accept=".pdf, .docx"/>
+      <ion-input value="custom" color="primary" type="file" (change)="uploadFile($event)" accept=".pdf, .docx"></ion-input>
     </div>
   </form>
 </div>
