@@ -1,29 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { Observable } from 'rxjs';
+import { User } from '../shared/user.interface';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
-export class RegisterPage implements OnInit {
+export class RegisterPage implements OnDestroy {
+  user$: Observable<User> = this.authSvc.afAuth.user;
 
   constructor(private authSvc: AuthService,private router: Router) { }
 
   ngOnInit() {
   }
 
-  async onRegister(email, password){
-    try {
-      const user = await this.authSvc.register(email.value, password.value);
-      if(user){
-        //verified the email
-        this.router.navigate(['/tabs'])
-      }
-    } catch (error) {
-      console.log( 'Error ->', error )
+  async onSendEmail(){
+    try{
+      this.authSvc.sendVerificationEmail();
+    } catch(error){
+      console.log('Error ->', error); 
     }
   }
 
+  ngOnDestroy(): void{
+    this.authSvc.logout();
+  }
 }

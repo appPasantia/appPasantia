@@ -19,8 +19,10 @@ export class LoginPage implements OnInit {
       const user = await this.authSvc.register(email.value, password.value);
       if(user){
         //TODO: verified the email
-        this.router.navigate(['/tabs'])
-        console.log("user ->", user);
+        const isVerified =  this.authSvc.isEmailVerified(user);
+        this.redirectUser(isVerified);
+        //this.router.navigate(['/tabs'])
+        //console.log("user ->", user);
 
       }
     } catch (error) {
@@ -33,8 +35,10 @@ export class LoginPage implements OnInit {
       const user = await this.authSvc.loginGoogle();
       if(user){
         //TODO: verified the email
-        this.router.navigate(['/tabs'])
-        console.log("user ->", user);
+        const isVerified =  this.authSvc.isEmailVerified(user);
+        this.redirectUser(isVerified);
+        //this.router.navigate(['/tabs'])
+        //console.log("user ->", user);
       }
     } catch (error) {
       console.log( 'Error ->', error )
@@ -45,10 +49,21 @@ export class LoginPage implements OnInit {
       const user = await this.authSvc.register(email.value, password.value);
       if(user){
         //verified the email
-        this.router.navigate(['/tabs'])
+        const isVerified =  this.authSvc.isEmailVerified(user);
+        this.redirectUser(isVerified);
+        //this.router.navigate(['/tabs'])
       }
     } catch (error) {
       console.log( 'Error ->', error )
+    }
+  }
+
+  private redirectUser(isVerified: boolean){
+    if(isVerified){
+      this.router.navigate(['/tabs']);
+    }else {
+      //register
+      this.router.navigate(['/register']);
     }
   }
 

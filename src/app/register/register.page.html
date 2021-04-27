@@ -1,24 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Register User</ion-title>
+    <ion-title>Verification</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form>
-    <ion-item lines="full ">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" #email required></ion-input>
-    </ion-item>
-    <ion-item lines="full ">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" #password required></ion-input>
-    </ion-item>
-    <ion-row>
-      <ion-col>
-        <ion-button
-          type="submit" (click)="onRegister(email, password)" expand="block">Register</ion-button>
-      </ion-col>
-    </ion-row>
-  </form>
+<ion-content *ngIf = "user$ | async as user">
+  <ion-row>
+    <ion-col>
+      <h2>¡Gracias por usar nuestra aplicación para pasantias!</h2>
+      <p> Hemos enviado un correo de verificaión de cuenta a <strong>{{user.email}}</strong></p>
+      <p>Por favor, <a href="https://mail.google.com">Ingrese a su correo</a> e ingrese al link para verificar su correo.</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="primary" expand="block" (click)="onSendEmail()" >Reenviar correo de verificación</ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>

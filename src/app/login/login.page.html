@@ -16,16 +16,10 @@
     </ion-item>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" (click)="onLogin(email, password)" expand="block">Login</ion-button>
+        <ion-button type="submit" (click)="onLogin(email, password)" expand="block">Login / Register</ion-button>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-button
-          type="submit" (click)="onRegister(email, password)" expand="block">Register</ion-button>
-      </ion-col>
-    </ion-row>
-    <span class="divider line one-line"> or </span>
+    <span class="center-span"> or </span>
     <ion-row>
       <ion-col>
         <ion-button type="submit" color="danger" (click)="onLoginGoogle(email, password)" expand="block">Login with Google</ion-button>
