@@ -25,4 +25,8 @@ export class PasantiaService {
     const collection = this.database.collection(path);
     return collection.doc(id).valueChanges();
   }
+  getCollectionPasantia<tipo>(path: string){
+    const collection = this.database.collection<tipo>(path);
+    return collection.valueChanges();
+  }
 }
