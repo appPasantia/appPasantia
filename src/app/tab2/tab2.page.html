@@ -6,9 +6,9 @@
 
 <ion-content padding>
   <div class="centerdiv">
-    <form [formGroup]="loginForm">
-      <div class="derecha">
-        <ion-list>
+    <form [formGroup]="loginForm" class="centerspace">
+
+
           <ion-item>
             <ion-label position="stacked" class="redondeado"
               >Nombre pansatía</ion-label
@@ -58,22 +58,21 @@
             <ion-label position="stacked">Carrera</ion-label>
             <ion-input formControlName="area" type="password"></ion-input>
           </ion-item>
-        </ion-list>
-      </div>
-      <div class="derecha">
-        <ion-img src="assets/img/nube.PNG"></ion-img>
-        <ion-button (click)="pasantia()" mode="ios" size="small" color="light"
-          >Subir imagen</ion-button
-        >
+
+        <ion-img src="assets/img/photo.png"></ion-img>
+        <ion-item>
+          <ion-label position="stacked">Url Imagen</ion-label>
+          <ion-input formControlName="logo" type="password"></ion-input>
+        </ion-item>
         <ion-button
-          (click)="pasantia()"
+          (click)="guardarPasantia()"
           class="button-native2"
           mode="ios"
           size="small"
           color="light"
           >Publicar pasantia</ion-button
         >
-      </div>
+
     </form>
   </div>
 

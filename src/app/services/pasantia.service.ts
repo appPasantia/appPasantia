@@ -21,12 +21,15 @@ export class PasantiaService {
     return collection.doc(id).set(data);
 
   }
-  getPasantias(data: any, path : string , id: string){
+  getPasantias(path : string , id: string){
     const collection = this.database.collection(path);
     return collection.doc(id).valueChanges();
   }
   getCollectionPasantia<tipo>(path: string){
     const collection = this.database.collection<tipo>(path);
     return collection.valueChanges();
+  }
+  getID(){
+    return this.database.createId();
   }
 }

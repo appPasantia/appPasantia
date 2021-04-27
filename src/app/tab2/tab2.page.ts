@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { PasantiaService } from '../services/pasantia.service';
 
 @Component({
   selector: 'app-tab2',
@@ -14,10 +16,13 @@ export class Tab2Page {
     requisistos: new FormControl(''),
     correo: new FormControl(''),
     area: new FormControl(''),
-
+    logo:new FormControl(''),
     });
 
-  constructor() {}
+    private path='pasantias/'
+  constructor(private router: Router,private pasantiaServeice:PasantiaService ) {
+
+  }
 
   pasantia(){
 
@@ -25,6 +30,13 @@ export class Tab2Page {
 
   input(){
 
+  }
+  guardarPasantia(){
+
+    const id= this.pasantiaServeice.getID();
+    this.pasantiaServeice.createPasantias(this.loginForm.value,this.path,id);
+    this.router.navigate(['/tabs/tab1'])
+    console.log('form',this.loginForm.value)
   }
 
 }
