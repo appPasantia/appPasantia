@@ -7,8 +7,9 @@
 
 <ion-list>
   <ion-item *ngFor="let file of fileUpload">
-    <ion-thumbnail slot="start">
-      <ion-img [src]="file"></ion-img>
+    <ion-thumbnail slot="end">
+      <ion-icon size="large" name="document-attach-outline"></ion-icon>
     </ion-thumbnail>
+    <ion-label>Nombre de la empresa y del documento</ion-label>
   </ion-item>
 </ion-list>
