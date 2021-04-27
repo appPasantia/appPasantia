@@ -1,0 +1,14 @@
+<!--<div id="filePreview">
+  <div *ngFor = "let file of fileUpload">
+    <img loading="lazy" [src]="file" class="preview"/>
+    TODO mostrar un preview  o una imagen pequeña que necesite el usuario ver
+  </div>
+</div>-->
+
+<ion-list>
+  <ion-item *ngFor="let file of fileUpload">
+    <ion-thumbnail slot="start">
+      <ion-img [src]="file"></ion-img>
+    </ion-thumbnail>
+  </ion-item>
+</ion-list>

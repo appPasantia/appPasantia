@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { PhotoUploadComponent } from './photo-upload.component';
+import { FileListComponent } from './file-list.component';
 
-describe('PhotoUploadComponent', () => {
-  let component: PhotoUploadComponent;
-  let fixture: ComponentFixture<PhotoUploadComponent>;
+describe('FileListComponent', () => {
+  let component: FileListComponent;
+  let fixture: ComponentFixture<FileListComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhotoUploadComponent ],
+      declarations: [ FileListComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PhotoUploadComponent);
+    fixture = TestBed.createComponent(FileListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

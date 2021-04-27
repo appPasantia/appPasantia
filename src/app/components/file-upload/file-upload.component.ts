@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseUploadService } from 'src/app/services/firebase-upload.service';
 
 @Component({
-  selector: 'app-photo-upload',
-  templateUrl: './photo-upload.component.html',
-  styleUrls: ['./photo-upload.component.scss'],
+  selector: 'app-file-upload',
+  templateUrl: './file-upload.component.html',
+  styleUrls: ['./file-upload.component.scss'],
 })
-export class PhotoUploadComponent implements OnInit {
+export class FileUploadComponent implements OnInit {
   barStatus = false;
   fileUpload = [];
   constructor(private firebaseUploadService: FirebaseUploadService) { }
