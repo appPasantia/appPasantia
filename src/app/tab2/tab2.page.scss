@@ -1,0 +1,63 @@
+
+.button-inner {
+  display: flex;
+  position: relative;
+  flex-flow: row nowrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: aqua !important;
+}
+
+
+.redondeado {
+  border-radius: 5px;
+  border-color: black;
+}
+
+:host(.item-label-stacked) .input-wrapper, :host(.item-label-floating) .input-wrapper {
+  flex: 1 1 0%;
+  flex-direction: column;
+  background-color: antiquewhite !important;
+}
+
+
+.input-wrapper {
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: inherit;
+  align-items: inherit;
+  align-self: stretch;
+  text-overflow: ellipsis;
+  overflow: inherit;
+  box-sizing: border-box;
+ --border-width: 1px !important;
+  --border-style: solid !important;
+  --border-color: black !important;
+}
+
+label, input, select, textarea {
+  font-family: inherit;
+  line-height: normal;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: black !important;
+}
+.derecha{
+  display: inline-grid;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+
+.input1{
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: black !important;
+  background-color: aqua;
+}
+

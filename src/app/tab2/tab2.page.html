@@ -1,20 +1,26 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Subir pasantia
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <form [formGroup]="loginForm" >
-  <ion-list>
-  <ion-item>
-  <ion-label position="stacked">Nombre pansatía</ion-label>
-  <ion-input formControlName="userEmail" type="email" autocapitalize="off" autocomplete="off" autocorrect="off"></ion-input>
-  </ion-item>
+    <div class="derecha">
+  <ion-list >
 
+
+  <ion-item >
+  <ion-label position="stacked" class="redondeado">Nombre pansatía</ion-label>
+  <ion-input formControlName="userEmail" type="email" autocapitalize="off" autocomplete="off" autocorrect="off"></ion-input>
+
+  </ion-item>
   <ion-item>
+
+
     <ion-label position="stacked">Empresa</ion-label>
     <ion-input formControlName="userEmail" type="email" autocapitalize="off" autocomplete="off" autocorrect="off"></ion-input>
     </ion-item>
@@ -34,17 +40,23 @@
   <ion-input formControlName="userPassword" type="password"></ion-input>
   </ion-item>
 
-  <ion-toolbar>
-    <ion-title>
-      Subir imagen
-    </ion-title>
-  </ion-toolbar>
 
 
   </ion-list>
-  <ion-button type="submit" color="light" expand="full">Entrar</ion-button>
+
+
+</div>
+  <div class="derecha">
+    <ion-img src="assets/img/nube.PNG"></ion-img>
+    <ion-button (click)="pasantia()" mode="ios" size="small" color="light" >Subir imagen</ion-button>
+    <ion-toolbar>
+      <ion-title>
+        Sube tu curriculum
+      </ion-title>
+    </ion-toolbar>
+    <ion-button (click)="pasantia()" class="button-native2" mode="ios" size="small" color="light" >Publicar pasantia</ion-button>
+  </div>
+
   </form>
 
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
