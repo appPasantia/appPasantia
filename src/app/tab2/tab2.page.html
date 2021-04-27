@@ -1,62 +1,80 @@
-
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Subir pasantia
-    </ion-title>
+    <ion-title> Subir pasantia </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <form [formGroup]="loginForm" >
-    <div class="derecha">
-  <ion-list >
+  <div class="centerdiv">
+    <form [formGroup]="loginForm">
+      <div class="derecha">
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked" class="redondeado"
+              >Nombre pansatía</ion-label
+            >
+            <ion-input
+              formControlName="nombre"
+              type="email"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Empresa</ion-label>
+            <ion-input
+              formControlName="empresa"
+              type="email"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+            ></ion-input>
+          </ion-item>
 
+          <ion-item>
+            <ion-label position="stacked">Requisitos</ion-label>
+            <ion-input
+              formControlName="requisistos"
+              type="email"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+            ></ion-input>
+          </ion-item>
 
-  <ion-item >
-  <ion-label position="stacked" class="redondeado">Nombre pansatía</ion-label>
-  <ion-input formControlName="userEmail" type="email" autocapitalize="off" autocomplete="off" autocorrect="off"></ion-input>
+          <ion-item>
+            <ion-label position="stacked">Correo de contacto</ion-label>
+            <ion-input
+              formControlName="correo"
+              type="email"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+            ></ion-input>
+          </ion-item>
 
-  </ion-item>
-  <ion-item>
-
-
-    <ion-label position="stacked">Empresa</ion-label>
-    <ion-input formControlName="userEmail" type="email" autocapitalize="off" autocomplete="off" autocorrect="off"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Requisitos</ion-label>
-      <ion-input formControlName="userEmail" type="email" autocapitalize="off" autocomplete="off" autocorrect="off"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="stacked">Correo de contacto</ion-label>
-        <ion-input formControlName="userEmail" type="email" autocapitalize="off" autocomplete="off" autocorrect="off"></ion-input>
-        </ion-item>
-
-  <ion-item>
-  <ion-label position="stacked">Carrera</ion-label>
-  <ion-input formControlName="userPassword" type="password"></ion-input>
-  </ion-item>
-
-
-
-  </ion-list>
-
-
-</div>
-  <div class="derecha">
-    <ion-img src="assets/img/nube.PNG"></ion-img>
-    <ion-button (click)="pasantia()" mode="ios" size="small" color="light" >Subir imagen</ion-button>
-    <ion-toolbar>
-      <ion-title>
-        Sube tu curriculum
-      </ion-title>
-    </ion-toolbar>
-    <ion-button (click)="pasantia()" class="button-native2" mode="ios" size="small" color="light" >Publicar pasantia</ion-button>
+          <ion-item>
+            <ion-label position="stacked">Carrera</ion-label>
+            <ion-input formControlName="area" type="password"></ion-input>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div class="derecha">
+        <ion-img src="assets/img/nube.PNG"></ion-img>
+        <ion-button (click)="pasantia()" mode="ios" size="small" color="light"
+          >Subir imagen</ion-button
+        >
+        <ion-button
+          (click)="pasantia()"
+          class="button-native2"
+          mode="ios"
+          size="small"
+          color="light"
+          >Publicar pasantia</ion-button
+        >
+      </div>
+    </form>
   </div>
-
-  </form>
 
 </ion-content>

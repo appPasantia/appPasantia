@@ -9,11 +9,12 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class Tab2Page {
 
   loginForm = new FormGroup({
-    nombrePasantia: new FormControl(''),
+    nombre: new FormControl(''),
     empresa: new FormControl(''),
-    requisitos: new FormControl(''),
-    correoDeContacto: new FormControl(''),
-    carrera: new FormControl('')
+    requisistos: new FormControl(''),
+    correo: new FormControl(''),
+    area: new FormControl(''),
+
     });
 
   constructor() {}

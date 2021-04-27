@@ -2,3 +2,16 @@
     display: block;
     text-align: center;
 }
+.centerdiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+img{
+  max-width: 70%;
+}
+.margin{
+  margin: 10px;
+}

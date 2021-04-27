@@ -61,3 +61,10 @@ label, input, select, textarea {
   background-color: aqua;
 }
 
+.centerdiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
