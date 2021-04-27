@@ -18,4 +18,12 @@ export class Tab2Page {
 
   constructor() {}
 
+  pasantia(){
+
+  }
+
+  input(){
+
+  }
+
 }
