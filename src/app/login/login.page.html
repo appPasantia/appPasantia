@@ -8,20 +8,6 @@
   <div class="centerdiv">
     <img src="../../assets/img/login.png" class="margin"/>
     <form >
-      <ion-item lines="full" class="margin">
-        <ion-label position="floating">Email</ion-label>
-        <ion-input type="text" #email required></ion-input>
-      </ion-item>
-      <ion-item lines="full" class="margin">
-        <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" #password required></ion-input>
-      </ion-item>
-      <ion-row class="margin">
-        <ion-col>
-          <ion-button type="submit" (click)="onLogin(email, password)" color="tertiary" expand="block">Login / Register</ion-button>
-        </ion-col>
-      </ion-row>
-      <span class="center-span"> or </span>
       <ion-row class="margin">
         <ion-col>
           <ion-button type="submit" color="white" (click)="onLoginGoogle(email, password)" expand="block">Login with Google</ion-button>
