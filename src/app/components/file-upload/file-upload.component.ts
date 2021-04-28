@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Share } from '@capacitor/core';
 import { FirebaseUploadService } from 'src/app/services/firebase-upload.service';
 
 @Component({
@@ -19,12 +20,19 @@ export class FileUploadComponent implements OnInit {
       if(res){
         this.barStatus = false;
         this.fileUpload.unshift(res);
-        alert("Se mando tu curriculum, Exitos!")
+        alert("Se subio tu archivo, solo falta mandarlo!")
       }
     },
     (error:any) => {
       this.barStatus = false;
     }
     )
+  }
+
+  async sendEmail(){
+    await Share.share({
+      title:"Learn Ionic Fast",
+      text:"Check this"
+    });
   }
 }

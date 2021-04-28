@@ -12,6 +12,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { firebaseConfig } from './config/firebase.config';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { firebaseConfig } from './config/firebase.config';
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireStorageModule,
+    HttpClientModule
   ],
   providers: [
     InAppBrowser,

@@ -1,9 +1,10 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "pasantias",
   "appName": "appPasantia",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
+  "linuxAndroidStudioPath": "/home/cerber0/android-studio/bin/studio.sh",
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0

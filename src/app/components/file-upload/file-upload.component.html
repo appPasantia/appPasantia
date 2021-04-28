@@ -17,4 +17,9 @@
     </div>
   </ion-card-content>
   <app-file-list [fileUpload] = "fileUpload"></app-file-list>
+  <div *ngIf = "fileUpload">
+    <ion-button (click)="sendEmail()">Send Email
+      <ion-icon slot="start" name="send-outline"></ion-icon>
+    </ion-button>
+  </div>
 </ion-card>
