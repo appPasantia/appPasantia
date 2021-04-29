@@ -1,0 +1,31 @@
+.derecha{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: flex-end;
+}
+img{
+  padding: 5px;
+  height: 8rem;
+}
+.cardcolorbl{
+  background-color: #C3E5E4;
+  color: black;
+  --color: black;
+
+}
+.cardcolorgra{
+  background-color: #E6E6E6;
+  color: black;
+}
+
+.spacebetween{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-end;
+  color: black;
+}
+.color{
+  --ion-color-base: black;
+}

@@ -1,17 +1,79 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> Subir pasantia </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
+  <div class="centerdiv">
+    <form [formGroup]="loginForm" class="centerspace">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+          <ion-item>
+            <ion-label position="stacked" class="redondeado"
+              >Nombre pansatía</ion-label
+            >
+            <ion-input
+              formControlName="nombre"
+              type="email"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Empresa</ion-label>
+            <ion-input
+              formControlName="empresa"
+              type="email"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Requisitos</ion-label>
+            <ion-textarea
+              formControlName="requisistos"
+              type="email"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+            ></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Correo de contacto</ion-label>
+            <ion-input
+              formControlName="correo"
+              type="email"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Carrera</ion-label>
+            <ion-input formControlName="area" type="password"></ion-input>
+          </ion-item>
+
+        <ion-img src="assets/img/photo.png"></ion-img>
+        <ion-item>
+          <ion-label position="stacked">Url Imagen</ion-label>
+          <ion-input formControlName="logo" type="password"></ion-input>
+        </ion-item>
+        <ion-button
+          (click)="guardarPasantia()"
+          class="button-native2"
+          mode="ios"
+          size="small"
+          color="dark"
+          >Publicar pasantia</ion-button
+        >
+
+    </form>
+  </div>
+
 </ion-content>

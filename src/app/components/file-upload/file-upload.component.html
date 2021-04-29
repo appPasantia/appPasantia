@@ -1,0 +1,29 @@
+<ion-card class="ion-text-center" id="container">
+  <ion-card-content>
+    <div class="ion-text-center">
+      <div>
+        <form method="POST" enctype="multipart/form-data">
+          <div>
+            <div style="color: gray;">Por favor suba un archivo pdf o docx</div><br />
+            <input class="ion-text-left" value="custom" color="primary" type="file" (change)="uploadFile($event)" accept=".pdf, .docx"/>
+          </div>
+        </form>
+      </div>
+
+      <div *ngIf = "barStatus">
+        <ion-spinner name="lines-small"></ion-spinner>
+      </div>
+
+    </div>
+  </ion-card-content>
+</ion-card>
+<ion-button
+(click)="enviar()"
+class="button-native2"
+mode="ios"
+size="small"
+color="dark"
+>Publicar pasantia</ion-button
+>
+<app-file-list [fileUpload] = "fileUpload"></app-file-list>
+
