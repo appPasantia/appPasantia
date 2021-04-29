@@ -8,14 +8,14 @@
   <div *ngFor="let pasantia of pasantias; let i = index">
     <ion-card [class.cardcolorbl]="i%2==0" [class.cardcolorgra]="i%2==1">
       <div class="derecha">
-        <ion-button (click)="postular(pasantia)" mode="ios" size="small" color="light">Postular</ion-button>
+        <ion-button (click)="postular(pasantia)" mode="ios" size="small" color="dark">Postular</ion-button>
       </div>
       <img class="img-padding" src="{{pasantia.logo}}" />
       <ion-card-header>
         <ion-card-subtitle color="light">{{pasantia.area}}</ion-card-subtitle>
         <div class="spacebetween">
           <ion-card-title color="light">{{pasantia.nombre}}</ion-card-title>
-          <ion-icon (click)="seeMore(pasantia)" color="light" name="chevron-down-outline"></ion-icon>
+          <ion-icon (click)="seeMore(pasantia)" color="dark" name="chevron-down-outline"></ion-icon>
         </div>
       </ion-card-header>
       <ion-card-content *ngIf="pasantia.visibilidad">
