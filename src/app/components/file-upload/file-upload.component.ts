@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseUploadService } from 'src/app/services/firebase-upload.service';
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
 @Component({
   selector: 'app-file-upload',
@@ -9,7 +10,7 @@ import { FirebaseUploadService } from 'src/app/services/firebase-upload.service'
 export class FileUploadComponent implements OnInit {
   barStatus = false;
   fileUpload = [];
-  constructor(private firebaseUploadService: FirebaseUploadService) { }
+  constructor(private emailComposer: EmailComposer,private firebaseUploadService: FirebaseUploadService) { }
 
   ngOnInit() {}
 
@@ -26,5 +27,20 @@ export class FileUploadComponent implements OnInit {
       this.barStatus = false;
     }
     )
+  }
+  enviar() {
+    let email = {
+      to: 'ch.rash37@gmail.com',
+      attachments: [
+        'Archivo.png',
+
+      ],
+      subject: 'Cordova Icons',
+      body: 'How are you? Nice greetings from Leipzig',
+      isHtml: true,
+    };
+
+    // Send a text message using default options
+    this.emailComposer.open(email);
   }
 }
