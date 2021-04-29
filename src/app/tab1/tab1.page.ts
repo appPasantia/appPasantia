@@ -27,7 +27,8 @@ export class Tab1Page implements OnInit{
     pasantia.visibilidad= !pasantia.visibilidad
   }
   postular(pasantia){
-    this.router.navigate(['/tabs/tab3'])
+
+    this.router.navigate([`/tabs/tab3/${pasantia.correo}`])
   }
   getpasantias(){
     this.pasantiaServeice.getCollectionPasantia<Pasantia>(this.path).subscribe((res)=> {
