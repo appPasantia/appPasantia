@@ -5,7 +5,8 @@ https://nodejs.org/dist/v14.16.1/node-v14.16.1-x64.msi
 npm install -g @ionic/cli
 - clonar el repositorio
 - correr el comando 
-npm install
+npm install. Para que se instalen todas las depencias
+- para que el proyecto se lanze usar el comando
 ionic serve
 
 Para ver la base de datos se necesita que se proporcione un correo, por favor ponerse en contacto con cualquier miembro del grupo "Agrupacion 4"
