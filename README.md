@@ -21,4 +21,4 @@ Para que se instalen todas las depencias
 ionic serve
 ```
 
-Para ver la base de datos se necesita que se proporcione un correo, por favor ponerse en contacto con cualquier miembro del grupo "Agrupacion 4"
+### Para ver la base de datos se necesita que se proporcione un correo, por favor ponerse en contacto con cualquier miembro del grupo "Agrupacion 4"
