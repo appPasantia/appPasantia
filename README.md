@@ -7,3 +7,5 @@ npm install -g @ionic/cli
 - correr el comando 
 npm install
 ionic serve
+
+Para ver la base de datos se necesita que se proporcione un correo, por favor ponerse en contacto con cualquier miembro del grupo "Agrupacion 4"
