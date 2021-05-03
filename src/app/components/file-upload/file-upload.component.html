@@ -4,22 +4,20 @@
       <div>
         <form method="POST" enctype="multipart/form-data">
           <div>
-            <div style="color: gray; margin-top: 25px">Por favor suba un archivo pdf o docx</div><br />
-            <ion-input value="custom" color="primary" type="file" (change)="uploadFile($event)" accept=".pdf, .docx"></ion-input>
+            <div style="color: gray; margin-top: 25px">
+              Por favor suba un archivo pdf o docx
+            </div>
+            <br />
+            <input type="file" (change)="uploadFile($event)" />
           </div>
+          <ion-button (click)="shareLocalFile()">Upload File</ion-button>
         </form>
       </div>
 
-      <div *ngIf = "barStatus">
+      <div *ngIf="barStatus">
         <ion-spinner name="lines-small"></ion-spinner>
       </div>
-
     </div>
   </ion-card-content>
-  <app-file-list [fileUpload] = "fileUpload"></app-file-list>
-  <div *ngIf = "fileUpload">
-    <ion-button (click)="sendEmail()">Send Email
-      <ion-icon slot="start" name="send-outline"></ion-icon>
-    </ion-button>
-  </div>
+  <app-file-list [fileUpload]="fileUpload"></app-file-list>
 </ion-card>

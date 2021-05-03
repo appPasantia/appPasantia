@@ -7,8 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FileListComponent implements OnInit {
   @Input() fileUpload: any;
+
   constructor() { }
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    console.log(this.fileUpload);
+  }
 }
