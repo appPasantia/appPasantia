@@ -5,22 +5,44 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div *ngFor="let pasantia of pasantias; let i = index">
-    <ion-card [class.cardcolorbl]="i%2==0" [class.cardcolorgra]="i%2==1">
-      <div class="derecha">
-        <ion-button (click)="postular(pasantia)" mode="ios" size="small" color="dark">Postular</ion-button>
-      </div>
-      <img class="img-padding" src="{{pasantia.logo}}" />
-      <ion-card-header>
-        <ion-card-subtitle color="light">{{pasantia.area}}</ion-card-subtitle>
-        <div class="spacebetween">
-          <ion-card-title color="light">{{pasantia.nombre}}</ion-card-title>
-          <ion-icon (click)="seeMore(pasantia)" color="dark" name="chevron-down-outline"></ion-icon>
-        </div>
-      </ion-card-header>
-      <ion-card-content *ngIf="pasantia.visibilidad">
-        {{pasantia.requisistos}}
-      </ion-card-content>
-    </ion-card>
+  <div class="centerh" *ngIf="emptyList">
+    <div>
+      <p class="center">No exiten pasantias por el momento</p>
+    </div>
+    <div>
+      <ion-img class="image-empty"src="assets/img/inbox.png"></ion-img>
+    </div>
+
   </div>
+  <div *ngIf="loader;else showLoadPasantias">
+    <div *ngFor="let pasantia of pasantias; let i = index">
+      <ion-card [class.cardcolorbl]="i%2==0" [class.cardcolorgra]="i%2==1">
+        <div class="derecha">
+          <ion-button (click)="postular(pasantia)" mode="ios" size="small" color="dark">Postular</ion-button>
+        </div>
+        <img class="img-padding" src="{{pasantia.logo}}" />
+        <ion-card-header>
+          <ion-card-subtitle color="light">{{pasantia.area}}</ion-card-subtitle>
+          <div class="spacebetween">
+            <ion-card-title color="light">{{pasantia.nombre}}</ion-card-title>
+            <ion-icon (click)="seeMore(pasantia)" color="dark" name="chevron-down-outline"></ion-icon>
+          </div>
+        </ion-card-header>
+        <ion-card-content *ngIf="pasantia.visibilidad">
+          {{pasantia.requisistos}}
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <ng-template  #showLoadPasantias>
+    <div  class="ion-padding custom-skeleton" *ngFor="let pasantia of [1,2,3,4,5,6]">
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    </div>
+  </ng-template>
+
 </ion-content>

@@ -29,3 +29,22 @@ img{
 .color{
   --ion-color-base: black;
 }
+.image-empty{
+  padding: 100px;
+}
+.center{
+  padding: 50px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerh{
+  padding: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
