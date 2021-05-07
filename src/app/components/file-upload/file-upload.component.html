@@ -8,18 +8,20 @@
               Por favor suba un archivo pdf o docx
             </div>
             <br />
-            <input type="file" (change)="uploadFile($event)" />
+            <ion-input type="file" (change)="uploadFile($event)"></ion-input>
           </div>
         </form>
       </div>
-
+      <br />
       <div *ngIf="barStatus">
         <ion-spinner name="lines-small"></ion-spinner>
       </div>
 
-      <div *ngIf="fileUpload">
-        <ion-button (click)="shareLocalFile()">Upload File</ion-button>
+      <div style="color: gray">
+        Ahora puede mandar el correo a la empresa
       </div>
+      <br />
+      <ion-button (click)="shareLocalFile()">Manda tu curriculum</ion-button>
 
     </div>
   </ion-card-content>
