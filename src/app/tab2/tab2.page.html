@@ -6,23 +6,42 @@
 
 <ion-content padding>
   <div class="centerdiv">
-    <form [formGroup]="loginForm" class="centerspace">
+    <form [formGroup]="loginForm" class="centerspace" (ngSubmit) = "onResetForm()">
 
 
           <ion-item>
+
             <ion-label position="stacked" class="redondeado"
               >Nombre pansatía</ion-label
-            >
+            ><div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty ||nombre.touched )">
+              <div class= "container-error-message" *ngIf="nombre.errors.required">
+                Nombre es requerido
+              </div>
+              <div class="container-error-message" *ngIf="nombre.errors.minlength">
+                Nombre debe tener por lo menos 5 caracteres
+              </div>
+            </div>
+
             <ion-input
               formControlName="nombre"
               type="email"
               autocapitalize="off"
               autocomplete="off"
               autocorrect="off"
-            ></ion-input>
+
+            >
+          </ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="stacked">Empresa</ion-label>
+            <div class="alert-danger" *ngIf="empresa.invalid && (empresa.dirty ||empresa.touched )">
+              <div class= "container-error-message" *ngIf="empresa.errors.required">
+                Nombre es requerido
+              </div>
+              <div class="container-error-message" *ngIf="nombre.errors.minlength">
+                Nombre debe tener por lo menos 5 caracteres
+              </div>
+            </div>
             <ion-input
               formControlName="empresa"
               type="email"
@@ -34,35 +53,70 @@
 
           <ion-item>
             <ion-label position="stacked">Requisitos</ion-label>
-            <ion-textarea
+            <div class="alert-danger" *ngIf="requisistos.invalid && (requisistos.dirty ||requisistos.touched )">
+              <div class= "container-error-message" *ngIf="requisistos.errors.required">
+                Requisitos es requerido
+              </div>
+              <div class="container-error-message" *ngIf="requisistos.errors.minlength">
+                Requisitos debe tener por lo menos 5 caracteres
+              </div>
+            </div>
+            <ion-input
               formControlName="requisistos"
               type="email"
               autocapitalize="off"
               autocomplete="off"
               autocorrect="off"
-            ></ion-textarea>
+
+            ></ion-input>
           </ion-item>
 
           <ion-item>
             <ion-label position="stacked">Correo de contacto</ion-label>
+            <div class="alert-danger" *ngIf="correo.invalid && (correo.dirty ||correo.touched )">
+              <div class= "container-error-message" *ngIf="correo.errors.required">
+                Correo es requerido
+              </div>
+              <div class="container-error-message" *ngIf="(correo.dirty || correo.touched) && correo.invalid && correo.errors.pattern">
+                Ingrese un correo valido
+              </div>
+            </div>
             <ion-input
               formControlName="correo"
               type="email"
+              pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"
               autocapitalize="off"
               autocomplete="off"
               autocorrect="off"
+
             ></ion-input>
           </ion-item>
 
           <ion-item>
             <ion-label position="stacked">Carrera</ion-label>
-            <ion-input formControlName="area" type="password"></ion-input>
+            <div class="alert-danger" *ngIf="area.invalid && (area.dirty ||area.touched )">
+              <div class= "container-error-message" *ngIf="area.errors.required">
+                Carrera es requerido
+              </div>
+              <div class="container-error-message" *ngIf="area.errors.minlength">
+                Carrera debe tener por lo menos 5 caracteres
+              </div>
+            </div>
+            <ion-input formControlName="area" required></ion-input>
           </ion-item>
 
         <ion-img src="assets/img/photo.png"></ion-img>
         <ion-item>
           <ion-label position="stacked">Url Imagen</ion-label>
-          <ion-input formControlName="logo" type="password"></ion-input>
+          <div class="alert-danger" *ngIf="logo.invalid && (logo.dirty ||logo.touched )">
+            <div class= "container-error-message" *ngIf="logo.errors.required">
+              Logo es requerido
+            </div>
+            <div class="container-error-message" *ngIf="logo.errors.minlength">
+              Logo debe tener por lo menos 5 caracteres
+            </div>
+          </div>
+          <ion-input formControlName="logo" required></ion-input>
         </ion-item>
         <ion-button
           (click)="guardarPasantia()"
@@ -70,6 +124,8 @@
           mode="ios"
           size="small"
           color="dark"
+          [disabled]= "loginForm.invalid"
+
           >Publicar pasantia</ion-button
         >
 
