@@ -25,6 +25,11 @@ export class RegisterPage implements OnDestroy {
     }
   }
 
+  async onVerify(isVerified: boolean){
+    const test = await this.authSvc.afAuth.currentUser;
+    console.log("sera",this.authSvc.actualUser);
+  }
+
   ngOnDestroy(): void{
     this.authSvc.logout();
   }

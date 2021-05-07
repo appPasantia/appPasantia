@@ -5,14 +5,16 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import firebase from "firebase/app";
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { AlertController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   public user$: Observable<User>;
-
-  constructor( public afAuth: AngularFireAuth, private afs: AngularFirestore) { 
+  public actualUser;
+  
+  constructor( public afAuth: AngularFireAuth, private afs: AngularFirestore, private alertController: AlertController) { 
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
         if(user){
@@ -37,7 +39,8 @@ export class AuthService {
       this.updateUserData(user);
       return user; 
     } catch (error) {
-      console.log( 'Error ->', error )
+      console.log( 'Error ->', error );
+      this.showLoginError();
     }
   }
 
@@ -92,5 +95,21 @@ export class AuthService {
     };
 
     return userRef.set(data, {merge: true});
+  }
+
+  async showLoginError() {
+    console.log("showing error");
+    const alert = await this.alertController.create({
+      header: 'Error al Iniciar sesión',
+      subHeader: 'Por favor intente de nuevo en otro momento',
+      //message: 'This is an alert message.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+    let result = await alert.onDidDismiss();
+
+    const { role } = await alert.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
   }
 }
