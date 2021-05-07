@@ -25,5 +25,12 @@ size="small"
 color="dark"
 >Publicar pasantia</ion-button
 >
+
+<form class="contact-form" (submit)="sendEmail($event)">
+  <input type="text" name="to_name" value="{{nombre}}">
+  <input  type="email" name="email_to" value="{{correo}}">
+  <textarea  name="message" value="{{mensaje}}"></textarea>
+  <input type="submit" value="Enviar postulacion">
+</form>
 <app-file-list [fileUpload] = "fileUpload"></app-file-list>
 
