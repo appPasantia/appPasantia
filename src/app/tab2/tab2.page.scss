@@ -1,4 +1,3 @@
-
 .button-inner {
   display: flex;
   position: relative;
@@ -61,3 +60,30 @@ label, input, select, textarea {
   background-color: aqua;
 }
 
+.centerdiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.centerspace{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+.alert-danger{
+  color: #721c24;
+  background: #f8d7da;
+  border-color: #f5c6cb;
+  margin-bottom: 5px ;
+}
+.container-error-message{
+  padding: 3px;
+
+}
