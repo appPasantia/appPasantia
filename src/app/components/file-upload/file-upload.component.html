@@ -16,20 +16,30 @@
     </div>
   </ion-card-content>
 </ion-card>
-<ion-button
-(click)="enviar()"
-class="button-native2"
-mode="ios"
-size="small"
-color="dark"
->Publicar pasantia</ion-button
->
+
 
 <form class="contact-form" (submit)="sendEmail($event)">
-  <input  type="text" name="to_name" value="{{nombre}}">
-  <input  type="email" name="email_to" value="{{correo}}">
-  <textarea  name="message" value="{{mensaje}}"></textarea>
-  <input type="submit" value="Enviar postulacion">
+  <ion-item>
+    <ion-label position="stacked">Nombre</ion-label>
+    <ion-input  type="text" name="to_name" value="{{nombre}}" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Correo empresa</ion-label>
+    <ion-input  type="email" name="email_to" value="{{correo}}" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Telefono</ion-label>
+    <ion-input  type="number" name="phone" value="{{telefono}}" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Mensage</ion-label>
+    <ion-textarea type="number"  name="message" value="{{mensaje}}" required></ion-textarea>
+  </ion-item>
+  <ion-button class="center"
+  mode="ios"
+  size="small"
+  color="dark" type="submit" value="Enviar postulacion">Enviar postulacion</ion-button>
 </form>
 <app-file-list [fileUpload] = "fileUpload"></app-file-list>
 

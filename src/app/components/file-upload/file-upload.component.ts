@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FirebaseUploadService } from 'src/app/services/firebase-upload.service';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
@@ -11,9 +11,11 @@ import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 export class FileUploadComponent implements OnInit {
   barStatus = false;
   fileUpload = [];
-  nombre='Estudiante';
-  correo='ch.rash37@gmail.com';
-  mensaje='Hay una nueva postulacion a su pasantia';
+  @Input() correo: string = '';
+  nombre='';
+  //correo='ch.rash37@gmail.com';
+  telefono:number;
+  mensaje='Hay una nueva postulación a su pasantía';
   constructor(private emailComposer: EmailComposer,private firebaseUploadService: FirebaseUploadService) { }
 
   ngOnInit() {}
