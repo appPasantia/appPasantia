@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FirebaseUploadService } from 'src/app/services/firebase-upload.service';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-file-upload',
@@ -15,6 +16,7 @@ export class FileUploadComponent implements OnInit {
   nombre='';
   //correo='ch.rash37@gmail.com';
   telefono:number;
+  postularForm:FormGroup;
   mensaje='Hay una nueva postulación a su pasantía';
   constructor(private emailComposer: EmailComposer,private firebaseUploadService: FirebaseUploadService) { }
 
@@ -59,4 +61,9 @@ export class FileUploadComponent implements OnInit {
         console.log(error.text);
       });
   }
+  ionViewDidLeave(){
+    this.nombre='';
+    this.telefono=null;
+  }
+
 }
