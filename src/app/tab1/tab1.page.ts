@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pasantia} from '../models/pasantia';
 import { PasantiaService } from '../services/pasantia.service';
@@ -9,7 +9,7 @@ import 'firebase/firestore';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page implements OnInit{
+export class Tab1Page implements OnInit, OnChanges{
 
 
   description: boolean = false;
@@ -37,12 +37,20 @@ export class Tab1Page implements OnInit{
       if(res){
         this.pasantias=res;
         this.loader=true;
+
+      }
+      if(this.pasantias.length==0){
+        this.emptyList=true;
+      }else{
+        this.emptyList=false;
       }
     });
+    console.log('PASANTIAS',this.pasantias)
 
-    if(!this.pasantias){
-      this.emptyList=true;
-    }
+
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+
 
   }
 }
