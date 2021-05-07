@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PasantiaService } from '../services/pasantia.service';
@@ -8,21 +8,32 @@ import { PasantiaService } from '../services/pasantia.service';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit{
 
-  loginForm = new FormGroup({
-    nombre: new FormControl(''),
-    empresa: new FormControl(''),
-    requisistos: new FormControl(''),
-    correo: new FormControl(''),
-    area: new FormControl(''),
-    logo:new FormControl(''),
-    });
+  loginForm : FormGroup;
 
     private path='pasantias/'
   constructor(private router: Router,private pasantiaServeice:PasantiaService ) {
 
   }
+  ngOnInit(): void {
+    console.log('ONIT')
+    this.loginForm = new FormGroup({
+      nombre: new FormControl(''),
+      empresa: new FormControl(''),
+      requisistos: new FormControl(''),
+      correo: new FormControl(''),
+      area: new FormControl(''),
+      logo:new FormControl(''),
+      });
+
+  }
+  ionViewDidLeave() {
+
+    this.loginForm.reset();
+}
+
+
 
   pasantia(){
 
