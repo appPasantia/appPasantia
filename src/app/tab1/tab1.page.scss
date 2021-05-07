@@ -6,7 +6,7 @@
 }
 img{
   padding: 5px;
-  height: 8rem;
+  max-height: 200px;
 }
 .cardcolorbl{
   background-color: #C3E5E4;
@@ -28,4 +28,33 @@ img{
 }
 .color{
   --ion-color-base: black;
+}
+.image-empty{
+  padding: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center{
+  padding: 50px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerh{
+  padding: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.center-img{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
 }

@@ -11,8 +11,11 @@ import 'firebase/firestore';
 })
 export class Tab1Page implements OnInit{
 
+
   description: boolean = false;
   pasantias: Pasantia[]=[];
+  emptyList: boolean=false;
+  loader: boolean=false;
 
 
 
@@ -31,8 +34,15 @@ export class Tab1Page implements OnInit{
   }
   getpasantias(){
     this.pasantiaServeice.getCollectionPasantia<Pasantia>(this.path).subscribe((res)=> {
-      this.pasantias=res;
-      console.log(res)
+      if(res){
+        this.pasantias=res;
+        this.loader=true;
+      }
     });
+
+    if(!this.pasantias){
+      this.emptyList=true;
+    }
+
   }
 }

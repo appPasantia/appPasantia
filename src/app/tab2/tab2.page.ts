@@ -1,4 +1,3 @@
-
 import { PasantiaService } from '../services/pasantia.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -56,6 +55,9 @@ export class Tab2Page implements OnDestroy, OnInit {
   ngOnDestroy() {
 
   }
+
+
+
 
   pasantia(){
 
