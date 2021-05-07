@@ -12,7 +12,7 @@ const { Share, FileSharer } = Plugins;
 })
 export class FileUploadComponent implements OnInit {
   barStatus = false;
-  fileUpload: any;
+  fileUpload = [];
   constructor(
     private firebaseUploadService: FirebaseUploadService,
     private http: HttpClient
@@ -21,11 +21,11 @@ export class FileUploadComponent implements OnInit {
   ngOnInit() {}
 
   async uploadFile(event) {
-    this.barStatus = false;
+    this.barStatus = true;
     await this.firebaseUploadService.storeFile(event.target.files[0]).then(
       (res: any) => {
         if (res) {
-          this.barStatus = true;
+          this.barStatus = false;
           this.fileUpload.unshift(res);
           alert('Se subio tu archivo, solo falta mandarlo!');
         }
@@ -57,7 +57,7 @@ export class FileUploadComponent implements OnInit {
   async shareLocalFile() {
     await Share.share({
       title: 'Presentacion para la pasantia',
-      url: this.fileUpload,
+      text: 'Hola me llamo ... y quiero postularme a la pasantía'
     });
   }
 }
