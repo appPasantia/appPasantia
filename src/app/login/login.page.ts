@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Plugins } from '@capacitor/core';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -14,50 +15,12 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  async onLogin(email, password){
-    try {
-      const user = await this.authSvc.register(email.value, password.value);
-      if(user){
-        //TODO: verified the email
-        const isVerified =  this.authSvc.isEmailVerified(user);
-        this.redirectUser(isVerified);
-        //this.router.navigate(['/tabs'])
-        //console.log("user ->", user);
-
-      }
-    } catch (error) {
-      console.log( 'Error ->', error )
-    }
-  }
-
   async onLoginGoogle(){
-    try {
-      const user = await this.authSvc.loginGoogle();
-      if(user){
-        //TODO: verified the email
-        const isVerified =  this.authSvc.isEmailVerified(user);
-        this.redirectUser(isVerified);
-        //this.router.navigate(['/tabs'])
-        //console.log("user ->", user);
-      }
-    } catch (error) {
-      console.log( 'Error ->', error )
-    }
+    this.authSvc.loginGoogle().then( () => {
+      this.router.navigate(['/tabs']);
+    });
   }
-  async onRegister(email, password){
-    try {
-      const user = await this.authSvc.register(email.value, password.value);
-      if(user){
-        //verified the email
-        const isVerified =  this.authSvc.isEmailVerified(user);
-        this.redirectUser(isVerified);
-        //this.router.navigate(['/tabs'])
-      }
-    } catch (error) {
-      console.log( 'Error ->', error )
-    }
-  }
-
+  
   private redirectUser(isVerified: boolean){
     if(isVerified){
       this.router.navigate(['/tabs']);

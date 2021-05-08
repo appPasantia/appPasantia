@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "558606639826",
+    "firebase_url": "https://apppasantia-3d3db-default-rtdb.firebaseio.com",
+    "project_id": "apppasantia-3d3db",
+    "storage_bucket": "apppasantia-3d3db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558606639826:android:82fd27526e1f87fb6e430b",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558606639826-lnuo1egpr6rce2h46jfjsd06g46cmdn4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.ionic.starter",
+            "certificate_hash": "756ab370563e699cd7eded02aab575a593b6dc4a"
+          }
+        },
+        {
+          "client_id": "558606639826-stbv5eu457lhhaha1j2qqdko8heuthpa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdBq1Ldlpxk1p4pyweTgOJbVu5A1IF1Xs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558606639826-stbv5eu457lhhaha1j2qqdko8heuthpa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

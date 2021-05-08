@@ -4,4 +4,5 @@
     <string name="title_activity_main">appPasantia</string>
     <string name="package_name">io.ionic.starter</string>
     <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="server_client_id">558606639826-stbv5eu457lhhaha1j2qqdko8heuthpa.apps.googleusercontent.com</string>    
 </resources>
