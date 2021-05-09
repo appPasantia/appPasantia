@@ -28,8 +28,6 @@ export class FileUploadComponent implements OnInit {
           this.barStatus = false;
           this.fileUpload.unshift(res);
           alert('Se subio tu archivo, solo falta mandarlo!');
-        } else {
-          this.fileUpload = null;
         }
       },
       (error: any) => {

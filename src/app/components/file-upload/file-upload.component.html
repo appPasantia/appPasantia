@@ -17,11 +17,14 @@
         <ion-spinner name="lines-small"></ion-spinner>
       </div>
 
-      <div style="color: gray">
-        Ahora puede mandar el correo a la empresa
+      <!--TODO ver que se active cuando suba el archivo-->
+      <div *ngIf="!fileUpload">
+        <div style="color: gray">
+          Ahora puede mandar el correo a la empresa
+        </div>
+        <br />
+        <ion-button (click)="shareLocalFile()">Manda tu curriculum</ion-button>
       </div>
-      <br />
-      <ion-button (click)="shareLocalFile()">Manda tu curriculum</ion-button>
 
     </div>
   </ion-card-content>
