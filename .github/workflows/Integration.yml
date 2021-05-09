@@ -19,6 +19,8 @@ jobs:
       run: npm install -g @capacitor/cli @capacitor/core
     - name: Build
       run: ionic build
+    - name: Capacitor Update
+      run: npx capacitor sync
     - name: Open Capacitor android
       run: npx capacitor open android
     
